@@ -1,0 +1,4 @@
+deepseek-r1:7b
+http://192.168.0.102:11434
+
+curl http://192.168.0.102:11434/api/tags
