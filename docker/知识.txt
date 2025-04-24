@@ -1,0 +1,3 @@
+[{
+        "content": "Inspect and analyze the details of the chatbot's interactions, which are recorded in the Conversation Log. The Prompt log page will specifically show you the intricacies of how the embedded document content (from your Knowledge base) is being utilized in each interaction. This examination can reveal insights into the effectiveness of your Knowledge base and the embedding model, and how they are influencing the chatbot's responses."
+}]

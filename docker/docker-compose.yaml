@@ -533,6 +533,14 @@ services:
       SENTRY_PROFILES_SAMPLE_RATE: ${API_SENTRY_PROFILES_SAMPLE_RATE:-1.0}
       PLUGIN_MAX_PACKAGE_SIZE: ${PLUGIN_MAX_PACKAGE_SIZE:-52428800}
       INNER_API_KEY_FOR_PLUGIN: ${PLUGIN_DIFY_INNER_API_KEY:-QaHbTe77CtuXmsfyhR7+vRjI/+XbV1AaFy691iy+kGDv2Jvy0/eAh8Y1}
+      HTTP_PROXY: http://192.168.0.102:7890/
+      HTTPS_PROXY: http://192.168.0.102:7890/
+      NO_PROXY: "localhost,ssrf_proxy,192.168.0.102,127.0.0.1,0.0.0.0,opensearch,172.*,weaviate,qdrand,db,redis,web,worker,plugin_daemon,api,worker,web,db,redis,sandbox,plugin_daemon,certbot,nginx,
+      weaviate,qdrant,couchbase-server,pgvector,pgvecto-rs,chroma,oceanbase,oracle,etcd,minio,milvus-standalone,opensearch,opensearch-dashboards,opengauss,myscale,elasticsearch,kibana,unstructured"
+      no_proxy: "localhost,ssrf_proxy,192.168.0.102,127.0.0.1,0.0.0.0,opensearch,172.*,weaviate,qdrand,db,redis,web,worker,plugin_daemon,api,worker,web,db,redis,sandbox,plugin_daemon,certbot,nginx,
+      weaviate,qdrant,couchbase-server,pgvector,pgvecto-rs,chroma,oceanbase,oracle,etcd,minio,milvus-standalone,opensearch,opensearch-dashboards,opengauss,myscale,elasticsearch,kibana,unstructured"
+      https_proxy: http://192.168.0.102:7890/
+      http_proxy: http://192.168.0.102:7890/
     depends_on:
       db:
         condition: service_healthy
@@ -607,6 +615,14 @@ services:
     restart: always
     environment:
       REDISCLI_AUTH: ${REDIS_PASSWORD:-difyai123456}
+      HTTP_PROXY: http://192.168.0.102:7890/
+      HTTPS_PROXY: http://192.168.0.102:7890/
+      NO_PROXY: "localhost,ssrf_proxy,192.168.0.102,127.0.0.1,0.0.0.0,opensearch,172.*,weaviate,qdrand,db,redis,web,worker,plugin_daemon,api,worker,web,db,redis,sandbox,plugin_daemon,certbot,nginx,
+      weaviate,qdrant,couchbase-server,pgvector,pgvecto-rs,chroma,oceanbase,oracle,etcd,minio,milvus-standalone,opensearch,opensearch-dashboards,opengauss,myscale,elasticsearch,kibana,unstructured"
+      no_proxy: "localhost,ssrf_proxy,192.168.0.102,127.0.0.1,0.0.0.0,opensearch,172.*,weaviate,qdrand,db,redis,web,worker,plugin_daemon,api,worker,web,db,redis,sandbox,plugin_daemon,certbot,nginx,
+      weaviate,qdrant,couchbase-server,pgvector,pgvecto-rs,chroma,oceanbase,oracle,etcd,minio,milvus-standalone,opensearch,opensearch-dashboards,opengauss,myscale,elasticsearch,kibana,unstructured"
+      https_proxy: http://192.168.0.102:7890/
+      http_proxy: http://192.168.0.102:7890/
     volumes:
       # Mount the redis data directory to the container.
       - ./volumes/redis/data:/data
@@ -677,6 +693,14 @@ services:
       TENCENT_COS_SECRET_KEY: ${PLUGIN_TENCENT_COS_SECRET_KEY:-}
       TENCENT_COS_SECRET_ID: ${PLUGIN_TENCENT_COS_SECRET_ID:-}
       TENCENT_COS_REGION: ${PLUGIN_TENCENT_COS_REGION:-}
+      HTTP_PROXY: http://192.168.0.102:7890/
+      HTTPS_PROXY: http://192.168.0.102:7890/
+      NO_PROXY: "localhost,ssrf_proxy,192.168.0.102,127.0.0.1,0.0.0.0,opensearch,172.*,weaviate,qdrand,db,redis,web,worker,plugin_daemon,api,worker,web,db,redis,sandbox,plugin_daemon,certbot,nginx,
+      weaviate,qdrant,couchbase-server,pgvector,pgvecto-rs,chroma,oceanbase,oracle,etcd,minio,milvus-standalone,opensearch,opensearch-dashboards,opengauss,myscale,elasticsearch,kibana,unstructured"
+      no_proxy: "localhost,ssrf_proxy,192.168.0.102,127.0.0.1,0.0.0.0,opensearch,172.*,weaviate,qdrand,db,redis,web,worker,plugin_daemon,api,worker,web,db,redis,sandbox,plugin_daemon,certbot,nginx,
+      weaviate,qdrant,couchbase-server,pgvector,pgvecto-rs,chroma,oceanbase,oracle,etcd,minio,milvus-standalone,opensearch,opensearch-dashboards,opengauss,myscale,elasticsearch,kibana,unstructured"
+      https_proxy: http://192.168.0.102:7890/
+      http_proxy: http://192.168.0.102:7890/
     ports:
       - "${EXPOSE_PLUGIN_DEBUGGING_PORT:-5003}:${PLUGIN_DEBUGGING_PORT:-5003}"
     volumes:
